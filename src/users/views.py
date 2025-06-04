@@ -33,7 +33,7 @@ def login_view(request):
                 messages.error(request, "Login yoki parol noto'g'ri.")
 
     return render(request, 'login.html', {'form': form})
-@role_required('Admin', 'Manager')
+
 def user_list(request):
     if request.user.is_authenticated and request.user.role is not None:
         if request.user.role.name in ["superuser", "manager"]:

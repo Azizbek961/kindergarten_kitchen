@@ -10,4 +10,6 @@ urlpatterns = [
     path('kid/add', kid_add, name='add-kid'),
     path('kids/<int:pk>/edit/', edit_kid, name='edit-kid'),
     path('kids/<int:pk>/delete/', delete_kid, name='delete-kid'),
+    path('groups/<int:pk>/delete/', views.delete_group, name='delete-group'),
+
 ]

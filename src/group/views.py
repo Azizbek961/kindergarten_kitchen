@@ -79,3 +79,10 @@ def kids_view(request):
     return render(request, 'kids.html', {
         'kids': kids,
     })
+def delete_group(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    if request.method == 'POST':
+        group.delete()
+        messages.success(request, 'Guruh muvaffaqiyatli o‘chirildi.')
+        return redirect('group-list')
+    return render(request, 'delete_group_confirm.html', {'group': group})

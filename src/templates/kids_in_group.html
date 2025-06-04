@@ -13,6 +13,9 @@
             <h2><i class="fas fa-users"></i> "{{ group.name }}" guruhi</h2>
             <p class="kids-count">{{ kids|length }} ta bola ro'yxatda</p>
         </div>
+        <a href="{% url 'delete-group' group.id %}" class="delete-btn">
+            <i class="fas fa-trash-alt"></i> Guruhni o‘chirish
+        </a>
         <div class="header-actions">
             <a href="{% url 'group-list' %}" class="back-btn">
                 <i class="fas fa-arrow-left"></i> Guruhlar ro'yxati
